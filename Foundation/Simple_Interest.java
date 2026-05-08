@@ -10,6 +10,7 @@ public class Simple_Interest {
         double Interest = input.nextDouble();
         System.out.println("Enter a Time : ");
         double Time = input.nextDouble();
+        input.close();
 
         double SI = (Principle * Interest *Time)/100;
         System.out.println("The Simple Interest is " + SI);
