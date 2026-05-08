@@ -36,6 +36,7 @@ public class Operators{
 
         System.out.println("Enter a Simple [ +,-,*,/]");
         char op = input.next().charAt(0);
+         input.close();
         if(op == '+'){
             System.out.println("Result = " + (Num1 + Num2));
         }else if(op == '-'){

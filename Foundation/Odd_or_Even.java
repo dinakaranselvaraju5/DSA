@@ -5,6 +5,7 @@ public class Odd_or_Even{
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a Number : ");
         int Number = input.nextInt();
+         input.close();
         if(Number%2==0){
             System.out.println("Even Number");
         }else{
