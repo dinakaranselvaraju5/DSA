@@ -6,7 +6,7 @@ public class AmstrongNumber {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a Number : ");
         int N = input.nextInt();
-
+        input.close();
         int Original = N;
         int Sum = 0;
         while (N > 0) {
