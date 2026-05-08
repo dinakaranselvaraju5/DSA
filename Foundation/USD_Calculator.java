@@ -1,3 +1,6 @@
+// Input currency in rupees and output in USD.
+
+
 import java.util.Scanner;
 
 public class USD_Calculator {
