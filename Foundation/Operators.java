@@ -1,3 +1,9 @@
+
+// Take in two numbers and an operator (+, -, *, /) and calculate the value. (Use if conditions)
+
+
+
+
 // import java.util.*;
 
 // public class Operators {
@@ -26,6 +32,9 @@
 
 
 import java.util.*;
+
+
+
 public class Operators{
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
