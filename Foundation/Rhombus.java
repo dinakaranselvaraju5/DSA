@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Parallelogram {
+public class Rhombus {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
