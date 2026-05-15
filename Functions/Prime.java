@@ -21,7 +21,7 @@ public class Prime {
         for(int i=2;i<Math.sqrt(Num);i++){
             if(Num%i == 0){
                 count ++;
-                
+             
             }
         }
 
