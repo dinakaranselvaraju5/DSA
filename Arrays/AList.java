@@ -1,6 +1,7 @@
 package Arrays;
 import java.util.ArrayList;
-import java.util.*;
+import java.util.List;
+//import java.util.*;
 public class AList {
 
     public static void main(String[] args) {
@@ -22,5 +23,8 @@ public class AList {
         System.out.println(list2);
         list2.contains(400);
         System.out.println(list2);
+
+        List<Integer> List3 = list2.subList(2, 9);
+        System.out.println(List3);
     }
 }
