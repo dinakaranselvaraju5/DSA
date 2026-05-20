@@ -13,7 +13,7 @@ public class permutation {
        for(int i=0;i<arr.length;i++){
          ans[i] = arr[arr[i]];
        } 
-
+       input.close();
        System.out.println(Arrays.toString(ans));
               
               
