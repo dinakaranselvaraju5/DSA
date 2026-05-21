@@ -11,6 +11,7 @@ public class AList {
         list.add(20);
         list.add(30);
         list.add(40);
+        list.add(50);
 
         ArrayList<Integer> list2 = new ArrayList<>(list);
         list2.addAll(list);
