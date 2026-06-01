@@ -3,8 +3,8 @@ package Sorting;
 public class BinarySearch {
 
     public static void main(String[] args) {
-        int[] arr = {1,4,9000,900000};
-        int target = 9000;
+        int[] arr = {2,3,5,9,14,16,18};
+        int target = 14;
         int Ans = Searching(arr,target);
        System.out.println("Index of the target : " + Ans);
     }
