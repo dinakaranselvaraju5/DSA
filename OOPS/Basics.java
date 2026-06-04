@@ -7,7 +7,11 @@ public class Basics {
         System.out.println(obj);
        // GradeCalculation F = new GradeCalculation();
         GradeCalculation.CheckGrade(100);
-        
+        //Greeting greeting = new Greeting();
+        Greeting.Greet();
+
+        //Static methods → call with ClassName.methodName().
+        //Instance methods → call with object.methodName() after creating an object.
     }
     static class A{
         int a;
