@@ -7,7 +7,7 @@ public class GradeCalculation {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a Mark : ");
-        int Mark = input.nextInt();
+         int Mark = input.nextInt();
         CheckGrade(Mark);
         input.close();
     }
@@ -20,7 +20,7 @@ public class GradeCalculation {
 // 51-60          CD 
 // 41-50          DD 
 // <=40          Fail
-    private static void CheckGrade(int mark) {
+    public static void CheckGrade(int mark) {
       
         if(mark >= 91 && mark <= 100 ){
             System.out.println("AA");
