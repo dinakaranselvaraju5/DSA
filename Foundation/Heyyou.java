@@ -1,0 +1,6 @@
+public class Heyyou {
+
+    public static void main(String[] args) {
+        System.out.println("Heyy You");
+    }
+}
