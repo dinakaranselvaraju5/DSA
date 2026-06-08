@@ -1,4 +1,4 @@
-
+// Compile Time / Static Polymorphism --> Achieved via Method Overloading.
 // Same name but types, arguments, return types amd ordering can be different.
 // Poly - Many, Morphism - Way to represent it.
 
