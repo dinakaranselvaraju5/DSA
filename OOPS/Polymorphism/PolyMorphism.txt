@@ -1,0 +1,157 @@
+What is Method Overriding?
+Method overriding happens when a subclass provides its own implementation of a method that is already defined in its superclass.
+
+The method in the subclass must have:
+    Same name
+    Same parameter list
+    Same return type (or covariant type)
+
+The overriding method cannot have a more restrictive access modifier.
+
+// Veryyyy Important point
+How Java Decides Which Method to Call
+Compile time: The compiler checks whether the method exists in the reference type (class of the variable).
+
+Runtime: The JVM decides which method to execute based on the actual object type (not the reference type).
+
+ This is called dynamic method dispatch.
+
+ Method Overriding 
+
+ class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Dog();  // reference type = Animal, object type = Dog
+        a.sound();             // Output: Dog barks
+    }
+}
+
+Explanation
+At compile time, the compiler sees a as type Animal, so it checks if sound() exists in Animal.
+At runtime, the JVM sees that the actual object is Dog, so it calls Dog’s version of sound().
+
+Key Points
+Overriding enables runtime polymorphism.
+
+    The object type decides which method runs, not the reference type.
+
+    If a method is static, it cannot be overridden (it’s hidden instead).
+
+    If a method is final, it cannot be overridden.
+
+    If a method is private, it’s not visible to subclasses, so overriding doesn’t apply.
+
+Java calls overridden methods based on the actual object type at runtime, not the reference type. This is why overriding is central to polymorphism
+
+
+
+
+
+
+
+**Method overloading in Java means defining multiple methods with the same name but different parameter lists. It enables *compile‑time polymorphism*, allowing the compiler to decide which method to call based on the arguments you pass. You cannot overload methods by return type alone — parameters must differ.**  [GeeksForGeeks](https://www.geeksforgeeks.org/java/method-overloading-in-java/)  [Programiz](https://www.programiz.com/java-programming/method-overloading)  [W3School](https://www.w3schools.com/java/java_methods_overloading.asp)
+
+---
+
+## 🔑 Key Rules of Method Overloading
+- **Same method name** but **different parameter lists**.
+- Parameters can differ by:
+  - **Number of parameters**  
+  - **Type of parameters**  
+  - **Order of parameters**
+- **Return type does not matter** — you cannot overload methods only by changing return type.
+- The compiler chooses the **most specific match** at compile time.
+
+---
+
+## 📘 Examples
+
+### 1. Changing Number of Parameters
+```java
+class Product {
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+    public int multiply(int a, int b, int c) {
+        return a * b * c;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Product p = new Product();
+        System.out.println(p.multiply(2, 3));     // 6
+        System.out.println(p.multiply(2, 3, 4)); // 24
+    }
+}
+```
+👉 The compiler decides which method to call based on how many arguments you pass.
+
+---
+
+### 2. Changing Data Types of Parameters
+```java
+class Calculator {
+    public int sum(int a, int b) {
+        return a + b;
+    }
+    public double sum(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator c = new Calculator();
+        System.out.println(c.sum(5, 10));     // int version → 15
+        System.out.println(c.sum(5.5, 10.5)); // double version → 16.0
+    }
+}
+```
+👉 The compiler picks the method based on argument types.
+
+---
+
+ 3. Changing Order of Parameters
+```java
+class Student {
+    public void studentId(String name, int rollNo) {
+        System.out.println("Name: " + name + ", Roll-No: " + rollNo);
+    }
+    public void studentId(int rollNo, String name) {
+        System.out.println("Roll-No: " + rollNo + ", Name: " + name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.studentId("Dinakaran", 101);
+        s.studentId(102, "Arun");
+    }
+}
+
+ Both methods have the same name but different parameter order.
+
+
+ Benefits of Method Overloading
+- **Flexibility**: Multiple ways to call the same logical operation.
+- **Readability**: Same method name for similar operations avoids confusion.
+- **Reusability**: Cleaner code, especially in libraries and frameworks.
+- **Compile-time polymorphism**: Decision is made at compile time, improving performance.
+
+Method overloading lets you define multiple versions of a method with the same name but different parameters, and the compiler automatically picks the right one based on the arguments you pass.
+
+Would you like me to also show you how **method overloading differs from constructor overloading
