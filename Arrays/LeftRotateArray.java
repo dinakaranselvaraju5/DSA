@@ -12,7 +12,8 @@ public class LeftRotateArray {
 
     public static void main(String[] args) {
         Integer[] arr = {2,3,4,5,6,7,88,99};
-        int LRotate = 6;
+        //int[] arr = {2,3,4,5,6,7,88,99};
+        int LRotate = 4;
         int N = arr.length;
         LeftRotate(arr,0,LRotate - 1);
         LeftRotate(arr, LRotate , N - 1);
@@ -21,6 +22,20 @@ public class LeftRotateArray {
         System.out.println(Arrays.toString(arr));
     }
 
+    /* Using Manual Loop Method 
+    public static void LeftRotate(int[] arr, int start,int end){
+        while(start <= end){
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+
+        }
+    }
+
+    */
+    // Using Inbuilt Functions    
     public static void LeftRotate(Integer[] arr, int start,int end) {
         List<Integer> list = Arrays.asList(arr);
         Collections.reverse(list.subList(start, end + 1));   
