@@ -27,6 +27,7 @@ public class TrafficLightSignal {
         int n = input.nextInt();
         String ans = trafficSignal(n);
         System.out.println(ans);
+        input.close();
     }
 
     
