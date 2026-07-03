@@ -43,7 +43,10 @@ public class MajorityElement {
         int answer = majorityElement(arr);
         System.out.println(answer);
     }
+    
 
+
+    // Current complexity : O( N log N)
      public static int majorityElement(int[] nums) {
         Arrays.sort(nums);
         int n = nums.length;
