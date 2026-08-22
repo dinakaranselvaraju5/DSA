@@ -35,6 +35,96 @@ public class DoublyLinkedList {
         return head;
     }
 
+
+    public static Node DeleteHead(Node head){
+
+        if(head == null || head.next == null){
+            return null;
+        }
+
+        Node prev = head;
+        head = head.next;
+        head.back = null;
+        prev.next = null;
+
+
+        return head;
+    }
+
+    public static Node DeleteTail(Node head){
+
+        Node temp = head;
+
+        while(temp.next!=null){
+            temp = temp.next;
+        }
+       Node prev = temp.back; 
+       prev.next = null;
+       temp.back = null;
+
+
+        return head;
+    }
+
+    public static Node deleteKthElement(Node head,int k){
+
+        //int k = 3;
+        Node temp = head;
+
+        if(temp == null || temp.next == null){
+            return null;
+        }
+        int cnt = 0;
+        while(temp!=null){
+            cnt++;
+
+            if(cnt == k){
+                break;
+            }
+            temp = temp.next;
+        }
+
+        Node prev = temp.back;
+        Node front = temp.next;
+
+        if(prev == null && front == null){
+            return null;
+        }else if(prev == null){
+            return DeleteHead (head);
+        }else if(front == null){
+            return DeleteTail(head);
+        }
+
+
+        prev.next = front;
+        front.back = prev;
+        temp.next = null;
+        temp.back = null;
+
+
+        return head;
+    }
+
+
+    public static void DeleteNode(Node temp){
+        Node prev = temp.back;
+        Node front = temp.next;
+
+        if(front == null){
+            prev.next = null;
+            temp.back = null;
+
+        }
+
+        prev.next = front;
+        front.back = prev;
+
+        temp.next = temp.back = null;
+
+    }
+
+
+
     public static void Print(Node head){
         Node temp = head;
 
@@ -49,6 +139,11 @@ public class DoublyLinkedList {
     public static void main(String[] args) {
         int[] arr = {3,12,44,211,1231};
         Node head = ConvertDoublyLinkedList2Array(arr);
+        Print(head);
+        System.out.println();
+        //System.out.println("------------ Deleting Head ------------");
+        //head = deleteKthElement(head,4);
+        DeleteNode(head.next.next.next);
         Print(head);
 
     }
